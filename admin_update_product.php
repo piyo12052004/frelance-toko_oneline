@@ -76,7 +76,7 @@ if(isset($_POST['update_product'])){
    <input type="hidden" value="<?php echo $fetch_products['id']; ?>" name="update_p_id">
    <input type="hidden" value="<?php echo $fetch_products['image']; ?>" name="update_p_image">
    <input type="text" class="box" value="<?php echo $fetch_products['name']; ?>" required placeholder="update product name" name="name">
-   <input type="number" min="0" class="box" value="<?php echo $fetch_products['price']; ?>" required placeholder="update product price" name="price">
+   <input type="text" class="box" value="<?php echo number_format($fetch_products['price'], 0, ',', '.'); ?>" required placeholder="update product price" name="price">
    <textarea name="details" class="box" required placeholder="update product details" cols="30" rows="10"><?php echo $fetch_products['details']; ?></textarea>
    <input type="file" accept="image/jpg, image/jpeg, image/png" class="box" name="image">
    <input type="submit" value="update product" name="update_product" class="btn">

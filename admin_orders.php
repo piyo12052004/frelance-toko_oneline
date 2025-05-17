@@ -34,7 +34,7 @@ $bukti_transfer = $db->query("SELECT * FROM bukti_transfer ORDER BY id DESC");
 
 <!DOCTYPE html>
 <html lang="id">
-<head>
+<head >
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +46,7 @@ $bukti_transfer = $db->query("SELECT * FROM bukti_transfer ORDER BY id DESC");
    <!-- custom admin css file link  -->
    <link rel="stylesheet" href="css/admin_style.css">
 </head>
-<body>
+<body style="background-color: pink;" >
    
 <?php @include 'admin_header.php'; ?>
 

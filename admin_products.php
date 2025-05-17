@@ -69,7 +69,7 @@ if(isset($_GET['delete'])){
    <link rel="stylesheet" href="css/admin_style.css">
 
 </head>
-<body>
+<body style="background-color: pink;">
    
 <?php @include 'admin_header.php'; ?>
 
@@ -77,11 +77,11 @@ if(isset($_GET['delete'])){
 
    <form action="" method="POST" enctype="multipart/form-data">
       <h3>💗Tambahkan Produk💗</h3>
-      <input type="text" class="box" required placeholder="tambahkan nama produk" name="name">
-      <input type="number" min="0" class="box" required placeholder="tambahkan harga produk" name="price">
-      <textarea name="details" class="box" required placeholder="tambahkan detail produk" cols="30" rows="10"></textarea>
-      <input type="file" accept="image/jpg, image/jpeg, image/png" required class="box" name="image">
-      <input type="submit" value="Tambahkan produk kamuu" name="add_product" class="btn">
+      <input style="background-color: pink;" type="text" class="box" required placeholder="tambahkan nama produk" name="name">
+      <input style="background-color: pink;" type="number" min="0" class="box" required placeholder="tambahkan harga produk" name="price">
+      <textarea style="background-color: pink;" name="details" class="box" required placeholder="tambahkan detail produk" cols="30" rows="10"></textarea>
+      <input style="background-color: pink;" type="file" accept="image/jpg, image/jpeg, image/png" required class="box" name="image">
+      <input style="background-color: pink;" type="submit" value="Tambahkan produk kamuu" name="add_product" class="btn">
    </form>
 
 </section>
@@ -96,7 +96,7 @@ if(isset($_GET['delete'])){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>
       <div class="box">
-         <div class="price">Rp.<?php echo $fetch_products['price']; ?></div>
+         <div class="price">Rp.<?php echo number_format($fetch_products['price'], 2, ',', '.'); ?></div>
          <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <div class="details"><?php echo $fetch_products['details']; ?></div>

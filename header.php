@@ -20,20 +20,13 @@ if(isset($message)){
         <nav class="navbar">
             <ul>
                 <li><a href="home.php">Beranda</a></li>
-                <li><a href="#">Halaman +</a>
+                <li><a href="about.php">Tentang Kami</a>
                     <ul>
-                        <li><a href="about.php">Tentang Kami</a></li>
                         <li><a href="contact.php">Kontak</a></li>
                     </ul>
                 </li>
                 <li><a href="shop.php">Toko</a></li>
                 <li><a href="orders.php">Pesanan Ku</a></li>
-                <li><a href="#">Akun +</a>
-                    <ul>
-                        <li><a href="login.php">Masuk</a></li>
-                        <li><a href="register.php">Registrasi</a></li>
-                    </ul>
-                </li>
             </ul>
         </nav>
 
@@ -41,11 +34,7 @@ if(isset($message)){
             <div id="menu-btn" class="fas fa-bars"></div>
             <a href="search_page.php" class="fas fa-search"></a>
             <div id="user-btn" class="fas fa-user"></div>
-            <?php
-                $select_wishlist_count = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE user_id = '$user_id'") or die('query failed');
-                $wishlist_num_rows = mysqli_num_rows($select_wishlist_count);
-            ?>
-            <a href="wishlist.php"><i class="fas fa-heart"></i><span>(<?php echo $wishlist_num_rows; ?>)</span></a>
+
             <?php
                 $select_cart_count = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
                 $cart_num_rows = mysqli_num_rows($select_cart_count);

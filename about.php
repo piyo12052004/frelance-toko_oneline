@@ -32,8 +32,8 @@ if(!isset($user_id)){
 <?php @include 'header.php'; ?>
 
 <section class="heading">
-    <h3>about us</h3>
-    <p> <a href="home.php">home</a> / about </p>
+    <h3>Tentang kami</h3>
+    <p> <a href="home.php">Beranda</a> / Tentang Kami </p>
 </section>
 
 <section class="about">
@@ -55,7 +55,7 @@ if(!isset($user_id)){
     <div class="flex">
 
         <div class="content">
-            <h3>what we provide?</h3>
+            <h3>Apa Yang Kami Sediakan?</h3>
             <p>selain itu, aku menyediakan banyak jenis charms untuk kamu kombinasikan, aku siap sedia jika kamu ingin berkonsultasi apa saja charm yang cocok untuk kamu, hubungi akuu yaaa💗.</p>
             <a href="contact.php" class="btn">contact us</a>
         </div>
@@ -73,7 +73,7 @@ if(!isset($user_id)){
         </div>
 
         <div class="content">
-            <h3>who we are?</h3>
+            <h3>Siapa Kita?</h3>
             <p>hi, aku candy, aku menyediakan banyak charms untuk bisa kamu pakai dan kamu kombinasikan, sudah banyak yang suka dengan charms aku, jadi kamu tidak usah ragu yaa💗</p>
             <a href="#reviews" class="btn">clients reviews</a>
         </div>
@@ -84,7 +84,7 @@ if(!isset($user_id)){
 
 <section class="reviews" id="reviews">
 
-    <h1 class="title">client's reviews</h1>
+    <h1 class="title">Rating Pembeli</h1>
 
     <div class="box-container">
 

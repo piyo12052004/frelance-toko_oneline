@@ -33,7 +33,7 @@ if(isset($_GET['delete'])){
    <link rel="stylesheet" href="css/admin_style.css">
 
 </head>
-<body>
+<body style="background-color: pink;" >
    
 <?php @include 'admin_header.php'; ?>
 

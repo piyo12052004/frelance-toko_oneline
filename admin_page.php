@@ -27,17 +27,17 @@ if(!isset($admin_id)){
    <link rel="stylesheet" href="css/admin_style.css">
 
 </head>
-<body>
+<body style="background-color: pink;">
    
 <?php @include 'admin_header.php'; ?>
 
-<section class="dashboard">
+<section style="background-color: pink;" class="dashboard">
 
    <h1 class="title">dashboard</h1>
 
    <div class="box-container">
 
-      <div class="box">
+      <div class="box" >
          <?php
             $total_pendings = 0;
             $select_pendings = mysqli_query($conn, "SELECT * FROM `orders` WHERE payment_status = 'pending'") or die('query failed');
@@ -45,8 +45,8 @@ if(!isset($admin_id)){
                $total_pendings += $fetch_pendings['total_price'];
             };
          ?>
-         <h3>Rp.<?php echo $total_pendings; ?>/-</h3>
-         <p>total pending</p>
+         <h3>Rp.<?php echo number_format($total_pendings, 0, ',', '.'); ?></h3>
+         <p style="background-color: pink;">total pending</p>
       </div>
 
       <div class="box">
@@ -57,8 +57,8 @@ if(!isset($admin_id)){
                $total_completes += $fetch_completes['total_price'];
             };
          ?>
-         <h3>Rp.<?php echo $total_completes; ?>/-</h3>
-         <p>pembayaran selesai</p>
+        <h3>Rp.<?php echo number_format($total_completes, 0, ',', '.'); ?></h3>
+         <p style="background-color: pink;">pembayaran selesai</p>
       </div>
 
       <div class="box">
@@ -67,7 +67,7 @@ if(!isset($admin_id)){
             $number_of_orders = mysqli_num_rows($select_orders);
          ?>
          <h3><?php echo $number_of_orders; ?></h3>
-         <p>pesanan diterima</p>
+         <p style="background-color: pink;">pesanan diterima</p>
       </div>
 
       <div class="box">
@@ -76,7 +76,7 @@ if(!isset($admin_id)){
             $number_of_products = mysqli_num_rows($select_products);
          ?>
          <h3><?php echo $number_of_products; ?></h3>
-         <p>produk ditambahkan</p>
+         <p style="background-color: pink;">produk ditambahkan</p>
       </div>
 
       <div class="box">
@@ -85,7 +85,7 @@ if(!isset($admin_id)){
             $number_of_users = mysqli_num_rows($select_users);
          ?>
          <h3><?php echo $number_of_users; ?></h3>
-         <p>akun pembeli</p>
+         <p style="background-color: pink;">akun pembeli</p>
       </div>
 
       <div class="box">
@@ -94,16 +94,7 @@ if(!isset($admin_id)){
             $number_of_admin = mysqli_num_rows($select_admin);
          ?>
          <h3><?php echo $number_of_admin; ?></h3>
-         <p>akun admin</p>
-      </div>
-
-      <div class="box">
-         <?php
-            $select_account = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
-            $number_of_account = mysqli_num_rows($select_account);
-         ?>
-         <h3><?php echo $number_of_account; ?></h3>
-         <p>total akun</p>
+         <p style="background-color: pink;">akun admin</p>
       </div>
 
       <div class="box">
@@ -112,7 +103,7 @@ if(!isset($admin_id)){
             $number_of_messages = mysqli_num_rows($select_messages);
          ?>
          <h3><?php echo $number_of_messages; ?></h3>
-         <p>pesan baru</p>
+         <p style="background-color: pink;">pesan baru</p>
       </div>
 
    </div>

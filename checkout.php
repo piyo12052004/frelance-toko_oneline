@@ -89,7 +89,7 @@ if (isset($_POST['payment'])) {
 
                 $created_at = date('Y-m-d H:i:s');
                 mysqli_query($conn, "INSERT INTO bukti_transfer (orders_id, bukti_transfer, created_at, status, kode_transaksi)
-                VALUES ('$order_id', '$new_name', '$created_at', 0, '$kode_transaksi')");
+                VALUES ('$order_id', '$new_name', '$created_at', 1, '$kode_transaksi')");
 
                 mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'");
 

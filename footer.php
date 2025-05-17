@@ -18,17 +18,26 @@
             <a href="cart.php">Keranjang ku</a>
         </div>
 
-        <div class="box">
-            <h3>Info Kontak</h3>
-            <p> <i class="fas fa-phone"></i> 0881-0242-01534 </p>
-            <p> <i class="fas fa-envelope"></i> candybracee@gmail.com </p>
-            <p> <i class="fas fa-map-marker-alt"></i> bekasi </p>
-        </div>
-
-        <div class="box">
-            <h3>Dukung Aku</h3>
-            <a href="https://www.instagram.com/candybrace.co?igsh=MXU3amc1a3p1Mm05cw=="><i class="fab fa-instagrm"></i>instagram: @candybracee.co</a>
-        </div>
+     <div class="box">
+        <h3>Hubungi</h3>
+        <p style="display: flex;" >
+            <i class="fas fa-phone" style="margin-top: 10px;" ></i>
+            <a href="https://wa.me/62881024201534" target="_blank">0881-0242-01534</a>
+        </p>
+        <p  style="display: flex;" >
+            <i class="fas fa-envelope"  style="margin-top: 12px;"></i>
+            <a href="mailto:candybracee@gmail.com">candybracee@gmail.com</a>
+        </p>
+        <p style="display: flex;"  >
+        <i class="fab fa-instagram" style="margin-top: 10px;" ></i>
+            <a href="https://www.instagram.com/candybrace.co?igsh=MXU3amc1a3p1Mm05cw==" target="_blank">
+                Instagram: @candybracee.co
+            </a>
+        </p>
+        <p>
+            <i class="fas fa-map-marker-alt"></i> Bekasi
+        </p>
+    </div>
 
     </div>
 

@@ -346,7 +346,7 @@ section{
 }
 
 .home{
-   min-height: 60vh;
+   min-height: 90vh;
    background:url(../images/home-bg.png) no-repeat;
    background-size: cover;
    background-position: center;
@@ -498,7 +498,7 @@ section{
 }
 
 .home-contact{
-   background-color: var(--black);
+   background-color:pink;
    text-align: center;
 }
 
@@ -516,7 +516,7 @@ section{
 .home-contact .content p{
    line-height: 2;
    font-size: 1.5rem;
-   color:var(--light-white);
+   color:var(--white);
    padding:1rem 0;
 }
 
