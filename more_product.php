@@ -19,7 +19,7 @@
 <body>
 
     <?php
-    $conn = mysqli_connect('localhost','root','','tokoonline') or die('connection failed');
+    $conn = mysqli_connect('localhost','root','','shop_db') or die('connection failed');
     
     $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
     $product_count = mysqli_num_rows($select_products);
@@ -28,30 +28,30 @@
     <!-- Header Section -->
     <header class="header">
         <div class="flex">
-            <a href="index.php" class="logo">CandyBrace</a>
+            <a href="#" class="logo">CandyBrace</a>
 
             <nav class="navbar">
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="products.php" class="active">Products</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="login.php">About</a></li>
+                    <li><a href="login.php">Contact</a></li>
                 </ul>
             </nav>
 
             <div class="icons">
                 <div id="menu-btn" class="fas fa-bars"></div>
-                <a href="#" class="fas fa-search"></a>
+                <!-- <a href="login.php" class="fas fa-search"></a> -->
                 <div id="user-btn" class="fas fa-user"></div>
-                <a href="#" class="fas fa-heart"><span>(3)</span></a>
-                <a href="#" class="fas fa-shopping-cart"><span>(2)</span></a>
+                <a href="login.php" class="fas fa-heart"><span>(0)</span></a>
+                <a href="login.php" class="fas fa-shopping-cart"><span>(0)</span></a>
             </div>
 
             <div class="account-box">
-                <p>username : <span>john doe</span></p>
-                <p>email : <span>john@gmail.com</span></p>
-                <a href="#" class="delete-btn">logout</a>
-                <div>new <a href="#">login</a> | <a href="#">register</a></div>
+                <!-- <p>username : <span>john doe</span></p>
+                <p>email : <span>john@gmail.com</span></p>-->
+                <a href="login.php" class="delete-btn">Login</a> 
+                <!-- <div>new <a href="login.php">login</a> | <a href="#">register</a></div> -->
             </div>
         </div>
     </header>
@@ -95,7 +95,7 @@
                 </div>
 
                 <!-- Category Filter -->
-                <div class="filter-group">
+                <!-- <div class="filter-group">
                     <label class="filter-label">
                         <i class="fas fa-tags"></i> Kategori
                     </label>
@@ -126,7 +126,7 @@
                             Pendant
                         </label>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Price Range -->
                 <div class="filter-group">
@@ -135,8 +135,8 @@
                     </label>
                     <div class="price-range">
                         <div class="price-inputs">
-                            <input type="number" id="min-price" placeholder="Min" min="0">
-                            <span>-</span>
+                            <!-- <input type="number" id="min-price" placeholder="Min" min="0"> -->
+                            <!-- <span>-</span> -->
                             <input type="number" id="max-price" placeholder="Max" min="0">
                         </div>
                         <div class="price-slider">
@@ -150,7 +150,7 @@
                 </div>
 
                 <!-- Material Filter -->
-                <div class="filter-group">
+                <!-- <div class="filter-group">
                     <label class="filter-label">
                         <i class="fas fa-gem"></i> Material
                     </label>
@@ -181,10 +181,10 @@
                             Kulit
                         </label>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Brand Filter -->
-                <div class="filter-group">
+                <!-- <div class="filter-group">
                     <label class="filter-label">
                         <i class="fas fa-crown"></i> Brand
                     </label>
@@ -210,10 +210,10 @@
                             Vintage Collection
                         </label>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Rating Filter -->
-                <div class="filter-group">
+                <!-- <div class="filter-group">
                     <label class="filter-label">
                         <i class="fas fa-star"></i> Rating
                     </label>
@@ -252,7 +252,7 @@
                             <span>3+ Bintang</span>
                         </label>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Filter Actions -->
                 <div class="filter-actions">
@@ -364,7 +364,7 @@
                             <?php endforeach; ?>
                         </div>
                         <?php endif; ?>
-                        <div class="product-actions">
+                        <!-- <div class="product-actions">
                             <button class="action-btn wishlist-btn" title="Tambah ke Wishlist">
                                 <i class="far fa-heart"></i>
                             </button>
@@ -374,12 +374,12 @@
                             <button class="action-btn compare-btn" title="Bandingkan">
                                 <i class="fas fa-balance-scale"></i>
                             </button>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="product-info">
                         <div class="product-category"><?php echo ucfirst($category); ?></div>
                         <h3 class="product-name"><?php echo $fetch_product['name']; ?></h3>
-                        <div class="product-rating">
+                        <!-- <div class="product-rating">
                             <div class="stars">
                                 <?php
                                 $full_stars = floor($rating);
@@ -399,11 +399,11 @@
                             </div>
                             <span class="rating-count">(<?php echo $rating; ?>) <?php echo $rating_count; ?>
                                 ulasan</span>
-                        </div>
+                        </div> -->
                         <div class="product-price">
                             <span class="current-price"><?php echo $formatted_price; ?></span>
                         </div>
-                        <button class="add-to-cart-btn">
+                        <button  id="add-to-cart" class="add-to-cart-btn">
                             <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
                         </button>
                     </div>

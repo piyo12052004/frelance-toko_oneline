@@ -247,20 +247,20 @@ document.addEventListener("DOMContentLoaded", () => {
         if (addToCartBtn) {
             addToCartBtn.addEventListener("click", (e) => {
                 window.location.href = 'login.php';
-                e.preventDefault()
-                const productName = box.querySelector('input[name="product_name"]').value
+                // e.preventDefault()
+                // const productName = box.querySelector('input[name="product_name"]').value
 
-                // Add visual feedback
-                addToCartBtn.style.background = "#27ae60"
-                addToCartBtn.value = "✓ Ditambahkan"
+                // // Add visual feedback
+                // addToCartBtn.style.background = "#27ae60"
+                // addToCartBtn.value = "✓ Ditambahkan"
 
-                setTimeout(() => {
-                    addToCartBtn.style.background = ""
-                    addToCartBtn.value = "add to cart"
-                }, 2000)
+                // setTimeout(() => {
+                //     addToCartBtn.style.background = ""
+                //     addToCartBtn.value = "add to cart"
+                // }, 2000)
 
-                // Show notification
-                showNotification(`${productName} berhasil ditambahkan ke keranjang!`, "success")
+                // // Show notification
+                // showNotification(`${productName} berhasil ditambahkan ke keranjang!`, "success")
             })
         }
 

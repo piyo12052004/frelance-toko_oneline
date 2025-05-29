@@ -18,7 +18,7 @@
 <body>
 
     <?php
-    $conn = mysqli_connect('localhost','root','','tokoonline') or die('connection failed');
+    $conn = mysqli_connect('localhost','root','','shop_db') or die('connection failed');
     
     // Fetch products from database
     $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
@@ -33,24 +33,24 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="login.php">About</a></li>
+                    <li><a href="login.php">Contact</a></li>
                 </ul>
             </nav>
 
             <div class="icons">
                 <div id="menu-btn" class="fas fa-bars"></div>
-                <a href="#" class="fas fa-search"></a>
+                <!-- <a href="login.php" class="fas fa-search"></a> -->
                 <div id="user-btn" class="fas fa-user"></div>
-                <a href="#" class="fas fa-heart"><span>(0)</span></a>
-                <a href="#" class="fas fa-shopping-cart"><span>(0)</span></a>
+                <a href="login.php" class="fas fa-heart"><span>(0)</span></a>
+                <a href="login.php" class="fas fa-shopping-cart"><span>(0)</span></a>
             </div>
 
             <div class="account-box">
-                <p>username : <span>john doe</span></p>
-                <p>email : <span>john@gmail.com</span></p>
-                <a href="#" class="delete-btn">logout</a>
-                <div>new <a href="#">login</a> | <a href="#">register</a></div>
+                <!-- <p>username : <span>john doe</span></p>
+                <p>email : <span>john@gmail.com</span></p>-->
+                <a href="login.php" class="delete-btn">Login</a> 
+                <!-- <div>new <a href="login.php">login</a> | <a href="#">register</a></div> -->
             </div>
         </div>
     </header>
@@ -92,7 +92,7 @@
                 <!-- Filter Options -->
                 <div class="filter-grid">
                     <!-- Category Filter -->
-                    <div class="filter-group">
+                    <!-- <div class="filter-group">
                         <label class="filter-label">
                             <i class="fas fa-tags"></i> Kategori
                         </label>
@@ -109,11 +109,11 @@
                             <button class="filter-btn" data-filter="category" data-value="set">
                                 <i class="fas fa-gem"></i> Set Lengkap
                             </button>
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- Price Filter -->
-                    <div class="filter-group">
+                    <div class="filter-group" style="margin-bottom: 10px;">
                         <label class="filter-label">
                             <i class="fas fa-money-bill-wave"></i> Rentang Harga
                         </label>
@@ -135,7 +135,7 @@
                         </div>
                     </div>
 
-                    <div class="filter-group">
+                    <!-- <div class="filter-group">
                         <label class="filter-label">
                             <i class="fas fa-palette"></i> Warna
                         </label>
@@ -167,7 +167,7 @@
                                 <span class="color-name">Hitam</span>
                             </button>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="filter-group">
                         <label class="filter-label">
@@ -228,16 +228,16 @@
                 <img class="image" src="uploaded_img/<?php echo $fetch_product['image']; ?>"
                     alt="<?php echo $fetch_product['name']; ?>">
                 <div class="price">Rp <?php echo $formatted_price; ?></div>
-                <i class="fas fa-eye"></i>
+                <!-- <i class="fas fa-eye"></i> -->
                 <div class="name"><?php echo $fetch_product['name']; ?></div>
-                <div class="rating">
+                <!-- <div class="rating">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                     <span>(4.5)</span>
-                </div>
+                </div> -->
                 <input type="number" min="1" name="product_quantity" value="1" class="qty">
                 <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
                 <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
@@ -265,7 +265,7 @@
             <p>Hai! Ada yang bisa aku bantu? 😊 aku akan selalu siap mendengar pertanyaan, saran, atau masukan dari
                 kamu. Jangan ragu untuk menghubungi aku melalui</p>
             <p>💗⇩⇩⇩💗</p>
-            <a href="#contact" class="btn">Hubungi Aku</a>
+            <a href="login.php" class="btn">Hubungi Aku</a>
         </div>
     </section>
 

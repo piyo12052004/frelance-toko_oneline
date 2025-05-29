@@ -14,6 +14,7 @@ if(isset($_POST['add_product'])){
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $price = mysqli_real_escape_string($conn, $_POST['price']);
+   $qty = mysqli_real_escape_string($conn, $_POST['qty']);
    $details = mysqli_real_escape_string($conn, $_POST['details']);
    $image = $_FILES['image']['name'];
    $image_size = $_FILES['image']['size'];
@@ -25,7 +26,7 @@ if(isset($_POST['add_product'])){
    if(mysqli_num_rows($select_product_name) > 0){
       $message[] = 'product name already exist!';
    }else{
-      $insert_product = mysqli_query($conn, "INSERT INTO `products`(name, details, price, image) VALUES('$name', '$details', '$price', '$image')") or die('query failed');
+      $insert_product = mysqli_query($conn, "INSERT INTO `products`(name, details, price,stok_produk, image) VALUES('$name', '$details', '$price', '$qty', '$image')") or die('query failed');
 
       if($insert_product){
          if($image_size > 2000000){
@@ -79,6 +80,7 @@ if(isset($_GET['delete'])){
       <h3>💗Tambahkan Produk💗</h3>
       <input style="background-color: pink;" type="text" class="box" required placeholder="tambahkan nama produk" name="name">
       <input style="background-color: pink;" type="number" min="0" class="box" required placeholder="tambahkan harga produk" name="price">
+      <input style="background-color: pink;" type="number" min="0" class="box" required placeholder="stok produk" name="qty">
       <textarea style="background-color: pink;" name="details" class="box" required placeholder="tambahkan detail produk" cols="30" rows="10"></textarea>
       <input style="background-color: pink;" type="file" accept="image/jpg, image/jpeg, image/png" required class="box" name="image">
       <input style="background-color: pink;" type="submit" value="Tambahkan produk kamuu" name="add_product" class="btn">

@@ -364,22 +364,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const addToCartBtns = document.querySelectorAll(".add-to-cart-btn")
     addToCartBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
-            const productCard = btn.closest(".product-card")
-            const productName = productCard.dataset.name
+            window.location.href = 'login.php';
+            // const productCard = btn.closest(".product-card")
+            // const productName = productCard.dataset.name
 
-            // Visual feedback
-            const originalBg = btn.style.background
-            const originalContent = btn.innerHTML
+            // // Visual feedback
+            // const originalBg = btn.style.background
+            // const originalContent = btn.innerHTML
 
-            btn.style.background = "#27ae60"
-            btn.innerHTML = '<i class="fas fa-check"></i> Ditambahkan'
+            // btn.style.background = "#27ae60"
+            // btn.innerHTML = '<i class="fas fa-check"></i> Ditambahkan'
 
-            setTimeout(() => {
-                btn.style.background = originalBg
-                btn.innerHTML = originalContent
-            }, 2000)
+            // setTimeout(() => {
+            //     btn.style.background = originalBg
+            //     btn.innerHTML = originalContent
+            // }, 2000)
 
-            showNotification(`${productName} berhasil ditambahkan ke keranjang!`, "success")
+            // showNotification(`${productName} berhasil ditambahkan ke keranjang!`, "success")
         })
     })
 
