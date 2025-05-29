@@ -242,7 +242,7 @@
                 <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
                 <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
                 <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
-                <input type="submit" value="add to wishlist" name="add_to_wishlist" class="option-btn">
+                <!-- <input type="submit" value="add to wishlist" name="add_to_wishlist" class="option-btn"> -->
                 <input id="add-to-cart" type="button" value="add to cart" name="add_to_cart" class="btn">
             </form>
             <?php
