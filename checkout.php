@@ -75,7 +75,7 @@ if (isset($_POST['payment'])) {
             $bukti_file = $_FILES['bukti']['name'];
             $bukti_tmp = $_FILES['bukti']['tmp_name'];
             $bukti_ext = pathinfo($bukti_file, PATHINFO_EXTENSION);
-            $allowed_ext = ['jpg', 'jpeg', 'png', 'pdf'];
+            $allowed_ext = ['jpg', 'jpeg', 'png'];
 
             if (in_array($bukti_ext, $allowed_ext)) {
                 $new_name = uniqid('bukti_') . '.' . $bukti_ext;
@@ -97,7 +97,7 @@ if (isset($_POST['payment'])) {
 
                 $message[] = 'Terima kasih telah melakukan pemesanan. Nomor resi akan kami kirimkan melalui pesan WhatsApp';
             } else {
-                $message[] = 'Format file tidak didukung. Gunakan JPG, PNG, atau PDF.';
+                $message[] = 'Format file tidak didukung. Gunakan JPG, PNG.';
             }
         }
     }
@@ -346,8 +346,8 @@ if (isset($message) && is_array($message)) {
             <form action="" method="POST" enctype="multipart/form-data">
                 <h3>Lanjut Transaksi</h3>
                 <div class="inputBox">
-                    <span>Bukti Transfer (jpg, png, pdf):</span>
-                    <input type="file" name="bukti" accept=".jpg,.jpeg,.png,.pdf" required>
+                    <span>Bukti Transfer (jpg, png):</span>
+                    <input type="file" name="bukti" accept=".jpg,.jpeg,.png" required>
                 </div>
                 <div class="inputBox">
                     <span>Metode Pembayaran:</span>
