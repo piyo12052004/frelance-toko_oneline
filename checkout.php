@@ -91,6 +91,22 @@ if (isset($_POST['payment'])) {
                 mysqli_query($conn, "INSERT INTO bukti_transfer (orders_id, bukti_transfer, created_at, status, kode_transaksi)
                 VALUES ('$order_id', '$new_name', '$created_at', 1, '$kode_transaksi')");
 
+                $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'");
+                if (mysqli_num_rows($cart_query) > 0) {
+                    while ($cart_item = mysqli_fetch_assoc($cart_query)) {
+                        $product_name = mysqli_real_escape_string($conn, $cart_item['name']);
+                        $quantity_beli = (int) $cart_item['quantity'];
+
+                        $produk_query = mysqli_query($conn, "SELECT * FROM `products` WHERE name = '$product_name' LIMIT 1");
+                        if ($produk = mysqli_fetch_assoc($produk_query)) {
+                            $stok_sekarang = (int) $produk['stok_produk'];
+                            $stok_baru = max($stok_sekarang - $quantity_beli, 0);
+
+                            mysqli_query($conn, "UPDATE `products` SET stok_produk = '$stok_baru' WHERE id = '{$produk['id']}'");
+                        }
+                    }
+                }
+
                 mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'");
 
                 unset($_SESSION['order_data']);
